@@ -1,20 +1,15 @@
 import _ from 'lodash'
-import './style.css'
-import Test from './test.jpg'
-import Data from './data.xml'
+import printMe from './print.js'
 function component() {
   var element = document.createElement('div')
 
   element.innerHTML = _.join(['Hello', 'webpack'], ' ')
-  element.classList.add('hello')
+  var btn = document.createElement('button');
 
-  // 添加图像
-  var image = new Image()
-  image.src = Test
-  element.appendChild(image)
-  
-  // 加载数据 xml
-  console.log(Data)
+  btn.innerHTML = 'Click me and check the console!';
+  btn.onclick = printMe;
+
+  element.appendChild(btn);
 
   return element
 }
