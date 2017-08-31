@@ -1,7 +1,7 @@
 import _ from 'lodash'
 import './style.css'
 import Test from './test.jpg'
-
+import Data from './data.xml'
 function component() {
   var element = document.createElement('div')
 
@@ -12,6 +12,10 @@ function component() {
   var image = new Image()
   image.src = Test
   element.appendChild(image)
+  
+  // 加载数据 xml
+  console.log(Data)
+
   return element
 }
 
