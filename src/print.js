@@ -1,3 +1,5 @@
 export default function printMe () {
-    console.log('我在print.js中调用')
+    console.log('Updating print.js...')
+    // console.log('update')
+    // cosnole.log('I get called from print.js!');
 }
