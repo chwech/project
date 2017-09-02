@@ -5,11 +5,14 @@
  module.exports = merge(common, {
    devtool: 'cheap-module-source-map',
    plugins: [
-     new UglifyJSPlugin(),
-     new webpack.DefinePlugin({
-       'process.env': {
-         'NODE_ENV': JSON.stringify('production')
-       }
-     })
+    new UglifyJSPlugin(),
+    new webpack.DefinePlugin({
+    'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+    }
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+       name: 'common' // Specify the common bundle's name.
+    })
    ]
  });
